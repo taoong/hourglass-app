@@ -9,11 +9,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="IB8-EL-x13">
             <objects>
-                <viewController id="Fsk-dO-ss5" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="qzJ-c8-6gS" customClass="HomeViewController">
+                <viewController id="Fsk-dO-ss5" customClass="HomeViewController" customModule="Hourglass" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qzJ-c8-6gS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -22,7 +22,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Productive"/>
                                 <connections>
-                                    <segue destination="65H-f4-iAH" kind="show" identifier="segueToProductive" id="GJH-35-IM5"/>
+                                    <action selector="toProductiveWithSender:" destination="Fsk-dO-ss5" eventType="touchUpInside" id="eSg-Z6-gMN"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WAI-Yh-Zed">
@@ -30,18 +30,30 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Unproductive"/>
                                 <connections>
-                                    <segue destination="WC9-mf-eY6" kind="show" identifier="segueToUnproductive" id="yQ8-TY-3Zk"/>
+                                    <action selector="toUnproductiveWithSender:" destination="Fsk-dO-ss5" eventType="touchUpInside" id="eNC-pq-Ezu"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z3V-4W-PXZ">
+                                <rect key="frame" x="166" y="533" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="izm-eW-do8"/>
                     </view>
                     <navigationItem key="navigationItem" id="ufi-R0-5oc"/>
+                    <connections>
+                        <outlet property="numTrees" destination="z3V-4W-PXZ" id="upj-yb-WLB"/>
+                        <segue destination="65H-f4-iAH" kind="show" identifier="segueToProductive" id="IXz-RS-NDD"/>
+                        <segue destination="WC9-mf-eY6" kind="show" identifier="segueToUnproductive" id="H3n-TF-dwh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9sZ-gb-ftF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="129" y="788"/>
+            <point key="canvasLocation" x="128.80000000000001" y="787.55622188905556"/>
         </scene>
         <!--Unproductive View Controller-->
         <scene sceneID="rak-8M-RK7">
@@ -70,14 +82,23 @@
                                             <constraint firstAttribute="width" constant="100" id="x5n-r3-3Rg"/>
                                         </constraints>
                                         <state key="normal" title="Start"/>
+                                        <connections>
+                                            <action selector="startTimer:" destination="WC9-mf-eY6" eventType="touchUpInside" id="AVH-PL-anB"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7e-8Q-waW">
                                         <rect key="frame" x="115" y="0.0" width="100" height="30"/>
                                         <state key="normal" title="Pause"/>
+                                        <connections>
+                                            <action selector="pauseTimer:" destination="WC9-mf-eY6" eventType="touchUpInside" id="Gqx-FG-Dox"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VbA-ex-5Kr">
                                         <rect key="frame" x="230" y="0.0" width="100" height="30"/>
                                         <state key="normal" title="Stop"/>
+                                        <connections>
+                                            <action selector="resetTimer:" destination="WC9-mf-eY6" eventType="touchUpInside" id="Kgm-kL-fKK"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -105,6 +126,7 @@
                         <outlet property="productiveButton" destination="Y8l-gs-dAg" id="XZd-fE-cmJ"/>
                         <outlet property="startButton" destination="Jf7-qr-V7P" id="8h5-Hr-W1s"/>
                         <outlet property="stopButton" destination="VbA-ex-5Kr" id="fYd-gv-DQh"/>
+                        <outlet property="timeLabel" destination="FTb-Gy-PBh" id="Y21-V9-Jys"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kir-Gx-dtm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -138,14 +160,23 @@
                                             <constraint firstAttribute="width" constant="100" id="3A1-JF-2qk"/>
                                         </constraints>
                                         <state key="normal" title="Start"/>
+                                        <connections>
+                                            <action selector="startTimer:" destination="65H-f4-iAH" eventType="touchUpInside" id="W8C-8a-HJf"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k4m-og-xPu">
                                         <rect key="frame" x="115" y="0.0" width="100" height="30"/>
                                         <state key="normal" title="Pause"/>
+                                        <connections>
+                                            <action selector="pauseTimer:" destination="65H-f4-iAH" eventType="touchUpInside" id="KLK-67-sUQ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EbK-cF-30Q">
                                         <rect key="frame" x="230" y="0.0" width="100" height="30"/>
                                         <state key="normal" title="Stop"/>
+                                        <connections>
+                                            <action selector="resetTimer:" destination="65H-f4-iAH" eventType="touchUpInside" id="jF2-l4-r6w"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -198,7 +229,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="VYw-sK-fRf"/>
-        <segue reference="aTj-Jf-cPr"/>
+        <segue reference="IXz-RS-NDD"/>
+        <segue reference="H3n-TF-dwh"/>
     </inferredMetricsTieBreakers>
 </document>
