@@ -16,14 +16,17 @@ class Hourglass {
     var unproductive : Bool
     var unproductiveCounter : Float
     
-    var numTreesGrown : Int
+    var numTreesGrown = 0
+    var activities = [String : Float]()
     
     init () {
-        self.numTreesGrown = 0
         self.productive = false
         self.unproductive = false
         self.productiveCounter = 0.0
         self.unproductiveCounter = 0.0
+        
+        UserDefaults.standard.set(activities, forKey: "activities")
+        UserDefaults.standard.set(numTreesGrown, forKey: "numTreesGrown")
     }
     
 }
