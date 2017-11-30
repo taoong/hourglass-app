@@ -17,29 +17,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lWf-HU-fI2">
-                                <rect key="frame" x="164" y="318" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Productive"/>
-                                <connections>
-                                    <action selector="toProductiveWithSender:" destination="Fsk-dO-ss5" eventType="touchUpInside" id="eSg-Z6-gMN"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WAI-Yh-Zed">
-                                <rect key="frame" x="164" y="400" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Unproductive"/>
-                                <connections>
-                                    <action selector="toUnproductiveWithSender:" destination="Fsk-dO-ss5" eventType="touchUpInside" id="eNC-pq-Ezu"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z3V-4W-PXZ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z3V-4W-PXZ">
                                 <rect key="frame" x="166" y="533" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lWf-HU-fI2">
+                                <rect key="frame" x="107" y="295" width="162" height="76"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Start being productive!"/>
+                                <connections>
+                                    <action selector="toProductiveWithSender:" destination="Fsk-dO-ss5" eventType="touchUpInside" id="f1j-CB-GPj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wND-OE-MjU">
+                                <rect key="frame" x="107" y="379" width="162" height="76"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Track unproductivity"/>
+                                <connections>
+                                    <action selector="toUnproductiveWithSender:" destination="Fsk-dO-ss5" eventType="touchUpInside" id="O1b-u2-ds0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="izm-eW-do8"/>
@@ -47,91 +47,12 @@
                     <navigationItem key="navigationItem" id="ufi-R0-5oc"/>
                     <connections>
                         <outlet property="numTrees" destination="z3V-4W-PXZ" id="upj-yb-WLB"/>
-                        <segue destination="65H-f4-iAH" kind="show" identifier="segueToProductive" id="IXz-RS-NDD"/>
-                        <segue destination="WC9-mf-eY6" kind="show" identifier="segueToUnproductive" id="H3n-TF-dwh"/>
+                        <segue destination="65H-f4-iAH" kind="show" identifier="segue" id="nHA-3R-7sy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9sZ-gb-ftF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="128.80000000000001" y="787.55622188905556"/>
-        </scene>
-        <!--Unproductive View Controller-->
-        <scene sceneID="rak-8M-RK7">
-            <objects>
-                <viewController id="WC9-mf-eY6" customClass="UnproductiveViewController" customModule="Hourglass" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="mP2-qB-Mna">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tn3-2S-xei">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="609"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FTb-Gy-PBh">
-                                <rect key="frame" x="111" y="304" width="153" height="58"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="52"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="OBS-t5-8qP">
-                                <rect key="frame" x="22" y="617" width="330" height="30"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jf7-qr-V7P">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="x5n-r3-3Rg"/>
-                                        </constraints>
-                                        <state key="normal" title="Start"/>
-                                        <connections>
-                                            <action selector="startTimer:" destination="WC9-mf-eY6" eventType="touchUpInside" id="AVH-PL-anB"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7e-8Q-waW">
-                                        <rect key="frame" x="115" y="0.0" width="100" height="30"/>
-                                        <state key="normal" title="Pause"/>
-                                        <connections>
-                                            <action selector="pauseTimer:" destination="WC9-mf-eY6" eventType="touchUpInside" id="Gqx-FG-Dox"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VbA-ex-5Kr">
-                                        <rect key="frame" x="230" y="0.0" width="100" height="30"/>
-                                        <state key="normal" title="Stop"/>
-                                        <connections>
-                                            <action selector="resetTimer:" destination="WC9-mf-eY6" eventType="touchUpInside" id="Kgm-kL-fKK"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y8l-gs-dAg">
-                                <rect key="frame" x="299" y="87" width="60" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Switch"/>
-                                <connections>
-                                    <segue destination="65H-f4-iAH" kind="show" id="VYw-sK-fRf"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="FTb-Gy-PBh" firstAttribute="centerX" secondItem="Pgm-uS-QM3" secondAttribute="centerX" id="3a6-gd-6Ne"/>
-                            <constraint firstItem="FTb-Gy-PBh" firstAttribute="centerY" secondItem="Pgm-uS-QM3" secondAttribute="centerY" id="JG4-h6-fhX"/>
-                            <constraint firstItem="OBS-t5-8qP" firstAttribute="top" secondItem="Pgm-uS-QM3" secondAttribute="bottom" constant="-50" id="Pbq-mo-HTg"/>
-                            <constraint firstItem="OBS-t5-8qP" firstAttribute="centerX" secondItem="Pgm-uS-QM3" secondAttribute="centerX" id="hr1-QT-twk"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="Pgm-uS-QM3"/>
-                    </view>
-                    <connections>
-                        <outlet property="imageView" destination="Tn3-2S-xei" id="1JT-Ma-YlT"/>
-                        <outlet property="pauseButton" destination="S7e-8Q-waW" id="fWq-Dy-EGQ"/>
-                        <outlet property="productiveButton" destination="Y8l-gs-dAg" id="XZd-fE-cmJ"/>
-                        <outlet property="startButton" destination="Jf7-qr-V7P" id="8h5-Hr-W1s"/>
-                        <outlet property="stopButton" destination="VbA-ex-5Kr" id="fYd-gv-DQh"/>
-                        <outlet property="timeLabel" destination="FTb-Gy-PBh" id="Y21-V9-Jys"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kir-Gx-dtm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="920.79999999999995" y="1117.6911544227887"/>
         </scene>
         <!--Productive View Controller-->
         <scene sceneID="Pya-Re-Sde">
@@ -185,9 +106,16 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Switch"/>
                                 <connections>
-                                    <segue destination="WC9-mf-eY6" kind="show" id="aTj-Jf-cPr"/>
+                                    <action selector="switchTimer:" destination="65H-f4-iAH" eventType="touchUpInside" id="pDV-Fg-dEt"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Productive" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Js8-Wi-PuY">
+                                <rect key="frame" x="146" y="246" width="140" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -201,15 +129,16 @@
                     <connections>
                         <outlet property="imageView" destination="vbt-Gg-A04" id="71f-nj-Iue"/>
                         <outlet property="pauseButton" destination="k4m-og-xPu" id="Ljk-Ty-9ju"/>
+                        <outlet property="productiveOrNot" destination="Js8-Wi-PuY" id="vbS-Tb-fQX"/>
                         <outlet property="startButton" destination="Imz-Af-RP7" id="HJE-vv-Yyy"/>
                         <outlet property="stopButton" destination="EbK-cF-30Q" id="ZQ5-ha-wYk"/>
+                        <outlet property="switchButton" destination="eRg-RG-q6Z" id="1S8-QV-tTj"/>
                         <outlet property="timerLabel" destination="ajW-pG-GZr" id="2fV-fb-alE"/>
-                        <outlet property="unproductiveButton" destination="eRg-RG-q6Z" id="kK7-I8-YeY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f6c-TV-ndk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="920.79999999999995" y="380.95952023988008"/>
+            <point key="canvasLocation" x="925.60000000000002" y="787.55622188905556"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="exg-PA-LDb">
@@ -228,8 +157,4 @@
             <point key="canvasLocation" x="-617" y="789"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="IXz-RS-NDD"/>
-        <segue reference="H3n-TF-dwh"/>
-    </inferredMetricsTieBreakers>
 </document>

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		81F3EA781FCE2C5900B4B4B6 /* ProductiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F3EA771FCE2C5900B4B4B6 /* ProductiveViewController.swift */; };
-		81F3EA7A1FCE2C6F00B4B4B6 /* UnproductiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F3EA791FCE2C6F00B4B4B6 /* UnproductiveViewController.swift */; };
 		F05595051FC90C6600940D87 /* Hourglass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05595041FC90C6600940D87 /* Hourglass.swift */; };
 		F0AED81F1FC6B7EB00A7C525 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AED81E1FC6B7EB00A7C525 /* AppDelegate.swift */; };
 		F0AED8211FC6B7EB00A7C525 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AED8201FC6B7EB00A7C525 /* HomeViewController.swift */; };
@@ -19,7 +18,6 @@
 
 /* Begin PBXFileReference section */
 		81F3EA771FCE2C5900B4B4B6 /* ProductiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductiveViewController.swift; sourceTree = "<group>"; };
-		81F3EA791FCE2C6F00B4B4B6 /* UnproductiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnproductiveViewController.swift; sourceTree = "<group>"; };
 		F05595041FC90C6600940D87 /* Hourglass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hourglass.swift; sourceTree = "<group>"; };
 		F0AED81B1FC6B7EB00A7C525 /* Hourglass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hourglass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0AED81E1FC6B7EB00A7C525 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,7 +90,6 @@
 			children = (
 				F0AED8201FC6B7EB00A7C525 /* HomeViewController.swift */,
 				81F3EA771FCE2C5900B4B4B6 /* ProductiveViewController.swift */,
-				81F3EA791FCE2C6F00B4B4B6 /* UnproductiveViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -173,7 +170,6 @@
 				81F3EA781FCE2C5900B4B4B6 /* ProductiveViewController.swift in Sources */,
 				F0AED8211FC6B7EB00A7C525 /* HomeViewController.swift in Sources */,
 				F0AED81F1FC6B7EB00A7C525 /* AppDelegate.swift in Sources */,
-				81F3EA7A1FCE2C6F00B4B4B6 /* UnproductiveViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

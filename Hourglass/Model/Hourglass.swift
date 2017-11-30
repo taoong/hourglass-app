@@ -11,11 +11,9 @@ import Foundation
 class Hourglass {
     
     var productive : Bool
-    var productiveVC : ProductiveViewController?
     var productiveCounter : Float
 
     var unproductive : Bool
-    var unproductiveVC : UnproductiveViewController?
     var unproductiveCounter : Float
     
     var numTreesGrown : Int
@@ -24,8 +22,8 @@ class Hourglass {
         self.numTreesGrown = 0
         self.productive = false
         self.unproductive = false
-        productiveCounter = 0.0
-        unproductiveCounter = 0.0
+        self.productiveCounter = 0.0
+        self.unproductiveCounter = 0.0
     }
     
 }
