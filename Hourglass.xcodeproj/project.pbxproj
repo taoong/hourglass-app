@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		81A19D781FD0FB830095CEFA /* ActivityTrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A19D771FD0FB830095CEFA /* ActivityTrackerViewController.swift */; };
 		81F3EA781FCE2C5900B4B4B6 /* ProductiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F3EA771FCE2C5900B4B4B6 /* ProductiveViewController.swift */; };
 		F05595051FC90C6600940D87 /* Hourglass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05595041FC90C6600940D87 /* Hourglass.swift */; };
 		F0AED81F1FC6B7EB00A7C525 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AED81E1FC6B7EB00A7C525 /* AppDelegate.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		81A19D771FD0FB830095CEFA /* ActivityTrackerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTrackerViewController.swift; sourceTree = "<group>"; };
 		81F3EA771FCE2C5900B4B4B6 /* ProductiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductiveViewController.swift; sourceTree = "<group>"; };
 		F05595041FC90C6600940D87 /* Hourglass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hourglass.swift; sourceTree = "<group>"; };
 		F0AED81B1FC6B7EB00A7C525 /* Hourglass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hourglass.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,6 +92,7 @@
 			children = (
 				F0AED8201FC6B7EB00A7C525 /* HomeViewController.swift */,
 				81F3EA771FCE2C5900B4B4B6 /* ProductiveViewController.swift */,
+				81A19D771FD0FB830095CEFA /* ActivityTrackerViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 				F05595051FC90C6600940D87 /* Hourglass.swift in Sources */,
 				81F3EA781FCE2C5900B4B4B6 /* ProductiveViewController.swift in Sources */,
 				F0AED8211FC6B7EB00A7C525 /* HomeViewController.swift in Sources */,
+				81A19D781FD0FB830095CEFA /* ActivityTrackerViewController.swift in Sources */,
 				F0AED81F1FC6B7EB00A7C525 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
