@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6EDA17EFC011378141BC6916 /* Pods_Hourglass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20FDBAC87E7D463B0FCE2981 /* Pods_Hourglass.framework */; };
 		81A19D781FD0FB830095CEFA /* ActivityTrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A19D771FD0FB830095CEFA /* ActivityTrackerViewController.swift */; };
 		81F3EA781FCE2C5900B4B4B6 /* ProductiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F3EA771FCE2C5900B4B4B6 /* ProductiveViewController.swift */; };
 		F05595051FC90C6600940D87 /* Hourglass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05595041FC90C6600940D87 /* Hourglass.swift */; };
@@ -18,8 +19,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		20FDBAC87E7D463B0FCE2981 /* Pods_Hourglass.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hourglass.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		458DAEF86B57C78C3F438A06 /* Pods-Hourglass.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hourglass.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hourglass/Pods-Hourglass.debug.xcconfig"; sourceTree = "<group>"; };
+		45DB7AC7A452C3FB00AAC6E1 /* Pods-Hourglass.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hourglass.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hourglass/Pods-Hourglass.release.xcconfig"; sourceTree = "<group>"; };
 		81A19D771FD0FB830095CEFA /* ActivityTrackerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTrackerViewController.swift; sourceTree = "<group>"; };
 		81F3EA771FCE2C5900B4B4B6 /* ProductiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductiveViewController.swift; sourceTree = "<group>"; };
+		F0234B801FD12146009D45CC /* hourglass.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = hourglass.json; sourceTree = "<group>"; };
 		F05595041FC90C6600940D87 /* Hourglass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hourglass.swift; sourceTree = "<group>"; };
 		F0AED81B1FC6B7EB00A7C525 /* Hourglass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hourglass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0AED81E1FC6B7EB00A7C525 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -35,17 +40,45 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EDA17EFC011378141BC6916 /* Pods_Hourglass.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A4904F8FD746483B3C5EFB6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				20FDBAC87E7D463B0FCE2981 /* Pods_Hourglass.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C70A4035C5871EAF178DBF4E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				458DAEF86B57C78C3F438A06 /* Pods-Hourglass.debug.xcconfig */,
+				45DB7AC7A452C3FB00AAC6E1 /* Pods-Hourglass.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F0234B811FD1215B009D45CC /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				F0234B801FD12146009D45CC /* hourglass.json */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
 		F0AED8121FC6B7EB00A7C525 = {
 			isa = PBXGroup;
 			children = (
 				F0AED81D1FC6B7EB00A7C525 /* Hourglass */,
 				F0AED81C1FC6B7EB00A7C525 /* Products */,
+				C70A4035C5871EAF178DBF4E /* Pods */,
+				1A4904F8FD746483B3C5EFB6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +93,7 @@
 		F0AED81D1FC6B7EB00A7C525 /* Hourglass */ = {
 			isa = PBXGroup;
 			children = (
+				F0234B811FD1215B009D45CC /* Animation */,
 				F0AED8301FC6B7F700A7C525 /* Model */,
 				F0AED8311FC6B7FC00A7C525 /* View */,
 				F0AED8321FC6B80100A7C525 /* Controller */,
@@ -104,9 +138,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F0AED82D1FC6B7EB00A7C525 /* Build configuration list for PBXNativeTarget "Hourglass" */;
 			buildPhases = (
+				B3ED9F35CD67BFFA4CD87903 /* [CP] Check Pods Manifest.lock */,
 				F0AED8171FC6B7EB00A7C525 /* Sources */,
 				F0AED8181FC6B7EB00A7C525 /* Frameworks */,
 				F0AED8191FC6B7EB00A7C525 /* Resources */,
+				C6B95FCC0442E2000F4DFA58 /* [CP] Embed Pods Frameworks */,
+				465A4A77DE62EFE027692B8B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -163,6 +200,62 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		465A4A77DE62EFE027692B8B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hourglass/Pods-Hourglass-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3ED9F35CD67BFFA4CD87903 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Hourglass-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6B95FCC0442E2000F4DFA58 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Hourglass/Pods-Hourglass-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hourglass/Pods-Hourglass-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F0AED8171FC6B7EB00A7C525 /* Sources */ = {
@@ -308,6 +401,7 @@
 		};
 		F0AED82E1FC6B7EB00A7C525 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 458DAEF86B57C78C3F438A06 /* Pods-Hourglass.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -322,6 +416,7 @@
 		};
 		F0AED82F1FC6B7EB00A7C525 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45DB7AC7A452C3FB00AAC6E1 /* Pods-Hourglass.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

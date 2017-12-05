@@ -6,6 +6,7 @@
 //  Copyright © 2017 Tao Ong and Caroline Zhou. All rights reserved.
 //
 
+
 import UIKit
 
 class HomeViewController: UIViewController {
@@ -40,6 +41,10 @@ class HomeViewController: UIViewController {
         performSegue(withIdentifier: "segue", sender: sender)
     }
     
+    @IBAction func toActivityTracker(_ sender: Any) {
+        performSegue(withIdentifier: "segueToActivityTracker", sender: sender)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
             if identifier == "segue" {
@@ -62,6 +67,10 @@ class HomeViewController: UIViewController {
                         self.model.productiveCounter = 0.0
                     }
                     dest.model = self.model
+                }
+            } else if identifier == "segueToActivityTracker" {
+                if let dest = segue.destination as? ActivityTrackerViewController {
+                    // nothing needs to be done, at least as of rn
                 }
             }
         }

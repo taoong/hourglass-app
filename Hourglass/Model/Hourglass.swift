@@ -17,7 +17,7 @@ class Hourglass {
     var unproductiveCounter : Float
     
     var numTreesGrown = 0
-    var activities = [String : Float]()
+    var activities = [String : Double]()
     
     init () {
         self.productive = false

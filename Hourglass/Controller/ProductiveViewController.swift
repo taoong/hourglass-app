@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Lottie
 
 class ProductiveViewController: UIViewController {
     
@@ -118,7 +119,7 @@ class ProductiveViewController: UIViewController {
         let alert = UIAlertController(title: "Alert", message: "Input Intended Task or Activity", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Enter", style: .default, handler: { [weak alert] (_) in
             self.currentTask = (alert?.textFields![0].text!)!      // alert.textFields![0].text! is the input text from the textfield in the alert
-            if var activities = UserDefaults.standard.value(forKey: "activities") as? Dictionary<String, Float> {
+            if var activities = UserDefaults.standard.value(forKey: "activities") as? Dictionary<String, Double> {
                 self.model.activities = activities
                 self.model.activities.updateValue(0.0, forKey: self.currentTask)
                 UserDefaults.standard.set(self.model.activities, forKey: "activities")

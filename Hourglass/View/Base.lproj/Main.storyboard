@@ -18,14 +18,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z3V-4W-PXZ">
-                                <rect key="frame" x="166" y="533" width="42" height="21"/>
+                                <rect key="frame" x="166" y="418" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lWf-HU-fI2">
-                                <rect key="frame" x="107" y="295" width="162" height="76"/>
+                                <rect key="frame" x="106" y="200" width="162" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Start being productive!"/>
                                 <connections>
@@ -33,11 +33,26 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wND-OE-MjU">
-                                <rect key="frame" x="107" y="379" width="162" height="76"/>
+                                <rect key="frame" x="106" y="260" width="162" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Track unproductivity"/>
                                 <connections>
                                     <action selector="toUnproductiveWithSender:" destination="Fsk-dO-ss5" eventType="touchUpInside" id="O1b-u2-ds0"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number of Trees Grown" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ifA-HJ-AKz">
+                                <rect key="frame" x="73" y="378" width="228" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QwP-5p-bJm">
+                                <rect key="frame" x="106" y="494" width="162" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Activity Tracker"/>
+                                <connections>
+                                    <action selector="toActivityTracker:" destination="Fsk-dO-ss5" eventType="touchUpInside" id="sWd-Bi-Jc3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -48,7 +63,7 @@
                     <connections>
                         <outlet property="numTrees" destination="z3V-4W-PXZ" id="upj-yb-WLB"/>
                         <segue destination="65H-f4-iAH" kind="show" identifier="segue" id="nHA-3R-7sy"/>
-                        <segue destination="Gse-5z-ZCn" kind="show" id="anv-HK-DYp"/>
+                        <segue destination="Gse-5z-ZCn" kind="show" identifier="segueToActivityTracker" id="anv-HK-DYp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9sZ-gb-ftF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -148,13 +163,57 @@
                     <view key="view" contentMode="scaleToFill" id="A1V-Bt-i59">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3t6-VD-NTe">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </scrollView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y43-oU-kAP">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="avY-Kh-EOa">
+                                        <rect key="frame" x="85" y="49" width="69" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="switchChart:" destination="Gse-5z-ZCn" eventType="touchUpInside" id="GX5-MZ-CJq"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ird-pG-4Gw">
+                                        <rect key="frame" x="0.0" y="8" width="375" height="311"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="311" identifier="view2height" id="ff1-xe-F2z"/>
+                                            <constraint firstAttribute="width" constant="375" id="qeN-aA-byO"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FM6-vQ-xw6">
+                                        <rect key="frame" x="0.0" y="-1386" width="375" height="294"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="375" id="dCh-6v-idd"/>
+                                            <constraint firstAttribute="height" constant="294" identifier="view1height" id="p5K-t8-T69"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="y49-b9-EVt"/>
                     </view>
+                    <connections>
+                        <outlet property="chart" destination="avY-Kh-EOa" id="u9H-IQ-esF"/>
+                        <outlet property="scrollView" destination="3t6-VD-NTe" id="TeD-ds-D5C"/>
+                        <outlet property="view1" destination="FM6-vQ-xw6" id="9wC-c4-DnP"/>
+                        <outlet property="view1height" destination="p5K-t8-T69" id="0aq-nu-fNf"/>
+                        <outlet property="view2" destination="Ird-pG-4Gw" id="pJz-7t-SKv"/>
+                        <outlet property="view2height" destination="ff1-xe-F2z" id="i96-GK-LhW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IX9-ss-fZ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="926" y="1544"/>
+            <point key="canvasLocation" x="925.60000000000002" y="1543.1784107946028"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="exg-PA-LDb">
