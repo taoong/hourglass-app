@@ -19,7 +19,6 @@ class ProductiveViewController: UIViewController {
     
     var imageRect = CGRect(x: 112, y: 350, width: 500, height: 300)
     
-    
     var animationView: LOTAnimationView = LOTAnimationView(name: "hourglass");
     
 
@@ -27,6 +26,8 @@ class ProductiveViewController: UIViewController {
     @IBOutlet weak var productiveOrNot: UILabel!
     var productiveOrNotText = "Being productive"
     @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var currActivityLabel: UILabel!
+    
     
     @IBOutlet weak var switchButton: UIButton!
     @IBOutlet weak var startButton: UIButton!
@@ -109,7 +110,10 @@ class ProductiveViewController: UIViewController {
             self.model.unproductive = true
             self.model.productive = false
             self.model.productiveCounter = 0.0
-            productiveOrNot.text = "Being unproductive"
+            productiveOrNot.text = "Unproductive"
+            productiveOrNot.textColor = UIColor.white
+            timerLabel.textColor = UIColor.white
+            currActivityLabel.textColor = UIColor.white
         }
         else if (self.model.unproductive) {
             self.timer.invalidate()
@@ -117,7 +121,22 @@ class ProductiveViewController: UIViewController {
             self.model.unproductive = false
             self.model.productive = true
             self.model.unproductiveCounter = 0.0
-            productiveOrNot.text = "Being productive"
+            productiveOrNot.text = "Productive"
+        }
+        
+        // Set correct bg image
+        if self.model.productive {
+            UIGraphicsBeginImageContext(self.view.frame.size)
+            UIImage(named: "productive")?.draw(in: self.view.bounds)
+            let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+            UIGraphicsEndImageContext()
+            self.view.backgroundColor = UIColor(patternImage: image)
+        } else if self.model.unproductive {
+            UIGraphicsBeginImageContext(self.view.frame.size)
+            UIImage(named: "unproductive")?.draw(in: self.view.bounds)
+            let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+            UIGraphicsEndImageContext()
+            self.view.backgroundColor = UIColor(patternImage: image)
         }
         
         let alert = UIAlertController(title: "Alert", message: "Input Intended Task or Activity", preferredStyle: UIAlertControllerStyle.alert)
@@ -150,6 +169,24 @@ class ProductiveViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.productiveOrNot.text = self.productiveOrNotText
         self.timer.invalidate()
+        
+        // Set correct bg image
+        if self.model.productive {
+            UIGraphicsBeginImageContext(self.view.frame.size)
+            UIImage(named: "productive")?.draw(in: self.view.bounds)
+            let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+            UIGraphicsEndImageContext()
+            self.view.backgroundColor = UIColor(patternImage: image)
+        } else if self.model.unproductive {
+            UIGraphicsBeginImageContext(self.view.frame.size)
+            UIImage(named: "unproductive")?.draw(in: self.view.bounds)
+            let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+            UIGraphicsEndImageContext()
+            self.view.backgroundColor = UIColor(patternImage: image)
+            productiveOrNot.textColor = UIColor.white
+            timerLabel.textColor = UIColor.white
+            currActivityLabel.textColor = UIColor.white
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
