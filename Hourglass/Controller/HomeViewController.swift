@@ -15,11 +15,19 @@ class HomeViewController: UIViewController {
     var pressID : Int?
     
     @IBOutlet weak var numTrees: UILabel!
+    @IBOutlet weak var logo: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.model = Hourglass()
+        
+        // Load background image
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        UIImage(named: "homescreen")?.draw(in: self.view.bounds)
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        self.view.backgroundColor = UIColor(patternImage: image)
     }
     
     override func viewDidAppear(_ animated: Bool) {

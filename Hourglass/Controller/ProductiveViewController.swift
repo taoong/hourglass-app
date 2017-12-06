@@ -21,13 +21,11 @@ class ProductiveViewController: UIViewController {
     
     var animationView: LOTAnimationView = LOTAnimationView(name: "hourglass");
     
-
     @IBOutlet weak var currentActivity: UILabel!
     @IBOutlet weak var productiveOrNot: UILabel!
     var productiveOrNotText = "Being productive"
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var currActivityLabel: UILabel!
-    
     
     @IBOutlet weak var switchButton: UIButton!
     @IBOutlet weak var startButton: UIButton!
@@ -124,20 +122,38 @@ class ProductiveViewController: UIViewController {
             productiveOrNot.text = "Productive"
         }
         
-        // Set correct bg image
+        // Set correct bg image and buttons
         if self.model.productive {
             UIGraphicsBeginImageContext(self.view.frame.size)
             UIImage(named: "productive")?.draw(in: self.view.bounds)
             let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
             UIGraphicsEndImageContext()
             self.view.backgroundColor = UIColor(patternImage: image)
+            
+            startButton.setImage(UIImage(named: "productive_start")?.withRenderingMode(.alwaysOriginal), for: .normal)
+            startButton.imageView?.contentMode = .scaleAspectFit
+            // startButton.imageEdgeInsets = UIEdgeInsetsMake(15.0, 15.0, 15.0, 5.0)
+            stopButton.setImage(UIImage(named: "productive_stop")?.withRenderingMode(.alwaysOriginal), for: .normal)
+            stopButton.imageView?.contentMode = .scaleAspectFit
+            pauseButton.setImage(UIImage(named: "productive_pause")?.withRenderingMode(.alwaysOriginal), for: .normal)
+            pauseButton.imageView?.contentMode = .scaleAspectFit
+            switchButton.setImage(UIImage(named: "productive_switch")?.withRenderingMode(.alwaysOriginal), for: .normal)
         } else if self.model.unproductive {
             UIGraphicsBeginImageContext(self.view.frame.size)
             UIImage(named: "unproductive")?.draw(in: self.view.bounds)
             let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
             UIGraphicsEndImageContext()
             self.view.backgroundColor = UIColor(patternImage: image)
+            
+            startButton.setImage(UIImage(named: "unproductive_start")?.withRenderingMode(.alwaysOriginal), for: .normal)
+            stopButton.setImage(UIImage(named: "unproductive_stop")?.withRenderingMode(.alwaysOriginal), for: .normal)
+            pauseButton.setImage(UIImage(named: "unproductive_pause")?.withRenderingMode(.alwaysOriginal), for: .normal)
+            switchButton.setImage(UIImage(named: "unproductive_switch")?.withRenderingMode(.alwaysOriginal), for: .normal)
         }
+        
+        startButton.imageView?.contentMode = .scaleAspectFit
+        stopButton.imageView?.contentMode = .scaleAspectFit
+        pauseButton.imageView?.contentMode = .scaleAspectFit
         
         let alert = UIAlertController(title: "Alert", message: "Input Intended Task or Activity", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Enter", style: .default, handler: { [weak alert] (_) in
@@ -170,13 +186,18 @@ class ProductiveViewController: UIViewController {
         self.productiveOrNot.text = self.productiveOrNotText
         self.timer.invalidate()
         
-        // Set correct bg image
+        // Set correct bg image and buttons
         if self.model.productive {
             UIGraphicsBeginImageContext(self.view.frame.size)
             UIImage(named: "productive")?.draw(in: self.view.bounds)
             let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
             UIGraphicsEndImageContext()
             self.view.backgroundColor = UIColor(patternImage: image)
+            
+            startButton.setImage(UIImage(named: "productive_start")?.withRenderingMode(.alwaysOriginal), for: .normal)
+            stopButton.setImage(UIImage(named: "productive_stop")?.withRenderingMode(.alwaysOriginal), for: .normal)
+            pauseButton.setImage(UIImage(named: "productive_pause")?.withRenderingMode(.alwaysOriginal), for: .normal)
+            switchButton.setImage(UIImage(named: "productive_switch")?.withRenderingMode(.alwaysOriginal), for: .normal)
         } else if self.model.unproductive {
             UIGraphicsBeginImageContext(self.view.frame.size)
             UIImage(named: "unproductive")?.draw(in: self.view.bounds)
@@ -186,7 +207,15 @@ class ProductiveViewController: UIViewController {
             productiveOrNot.textColor = UIColor.white
             timerLabel.textColor = UIColor.white
             currActivityLabel.textColor = UIColor.white
+            
+            startButton.setImage(UIImage(named: "unproductive_start")?.withRenderingMode(.alwaysOriginal), for: .normal)
+            stopButton.setImage(UIImage(named: "unproductive_stop")?.withRenderingMode(.alwaysOriginal), for: .normal)
+            pauseButton.setImage(UIImage(named: "unproductive_pause")?.withRenderingMode(.alwaysOriginal), for: .normal)
+            switchButton.setImage(UIImage(named: "unproductive_switch")?.withRenderingMode(.alwaysOriginal), for: .normal)
         }
+        startButton.imageView?.contentMode = .scaleAspectFit
+        stopButton.imageView?.contentMode = .scaleAspectFit
+        pauseButton.imageView?.contentMode = .scaleAspectFit
     }
     
     override func viewDidAppear(_ animated: Bool) {

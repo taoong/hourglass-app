@@ -17,56 +17,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lWf-HU-fI2">
-                                <rect key="frame" x="150" y="234" width="74" height="52"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z3V-4W-PXZ">
+                                <rect key="frame" x="172" y="492" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Productive"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lWf-HU-fI2">
+                                <rect key="frame" x="90" y="248" width="195" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Productive" image="home_productive_button"/>
                                 <connections>
                                     <action selector="toProductiveWithSender:" destination="Fsk-dO-ss5" eventType="touchUpInside" id="f1j-CB-GPj"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QwP-5p-bJm">
-                                <rect key="frame" x="106" y="366" width="162" height="30"/>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wND-OE-MjU">
+                                <rect key="frame" x="90" y="331" width="195" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Productivity Statistics"/>
-                                <connections>
-                                    <action selector="toActivityTracker:" destination="Fsk-dO-ss5" eventType="touchUpInside" id="sWd-Bi-Jc3"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wND-OE-MjU">
-                                <rect key="frame" x="141" y="309" width="93" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Unproductive"/>
+                                <state key="normal" title="Unproductive" image="home_unproductive_button"/>
                                 <connections>
                                     <action selector="toUnproductiveWithSender:" destination="Fsk-dO-ss5" eventType="touchUpInside" id="O1b-u2-ds0"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e1Y-xf-pQ5">
-                                <rect key="frame" x="67" y="75" width="240" height="128"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z3V-4W-PXZ">
-                                <rect key="frame" x="166" y="484" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number of Trees Grown:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ifA-HJ-AKz">
-                                <rect key="frame" x="73" y="455" width="228" height="21"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hourglass" translatesAutoresizingMaskIntoConstraints="NO" id="e1Y-xf-pQ5">
+                                <rect key="frame" x="67" y="84" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BNt-Jd-dUM">
+                                <rect key="frame" x="57" y="439" width="273" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="num_trees_label"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QwP-5p-bJm">
+                                <rect key="frame" x="28" y="561" width="331" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Productivity Statistics" image="productivity_stats_button"/>
+                                <connections>
+                                    <action selector="toActivityTracker:" destination="Fsk-dO-ss5" eventType="touchUpInside" id="sWd-Bi-Jc3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="z3V-4W-PXZ" firstAttribute="centerX" secondItem="izm-eW-do8" secondAttribute="centerX" id="BFI-0N-Biv"/>
-                            <constraint firstItem="e1Y-xf-pQ5" firstAttribute="centerX" secondItem="izm-eW-do8" secondAttribute="centerX" id="RaA-o9-aP4"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="izm-eW-do8"/>
                     </view>
                     <navigationItem key="navigationItem" id="ufi-R0-5oc"/>
                     <connections>
+                        <outlet property="logo" destination="e1Y-xf-pQ5" id="BP0-G6-tQq"/>
                         <outlet property="numTrees" destination="z3V-4W-PXZ" id="upj-yb-WLB"/>
                         <segue destination="65H-f4-iAH" kind="show" identifier="segue" id="nHA-3R-7sy"/>
                         <segue destination="Gse-5z-ZCn" kind="show" identifier="segueToActivityTracker" id="anv-HK-DYp"/>
@@ -91,12 +88,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Mg3-Fn-mtZ">
-                                <rect key="frame" x="22" y="617" width="330" height="30"/>
+                                <rect key="frame" x="22" y="617" width="330" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Imz-Af-RP7">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="3A1-JF-2qk"/>
+                                            <constraint firstAttribute="height" constant="40" id="9WK-q0-SQO"/>
                                         </constraints>
                                         <state key="normal" title="Start"/>
                                         <connections>
@@ -104,14 +102,14 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k4m-og-xPu">
-                                        <rect key="frame" x="115" y="0.0" width="100" height="30"/>
+                                        <rect key="frame" x="115" y="0.0" width="100" height="40"/>
                                         <state key="normal" title="Pause"/>
                                         <connections>
                                             <action selector="pauseTimer:" destination="65H-f4-iAH" eventType="touchUpInside" id="KLK-67-sUQ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EbK-cF-30Q">
-                                        <rect key="frame" x="230" y="0.0" width="100" height="30"/>
+                                        <rect key="frame" x="230" y="0.0" width="100" height="40"/>
                                         <state key="normal" title="Stop"/>
                                         <connections>
                                             <action selector="resetTimer:" destination="65H-f4-iAH" eventType="touchUpInside" id="jF2-l4-r6w"/>
@@ -245,4 +243,11 @@
             <point key="canvasLocation" x="-617" y="789"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="home_productive_button" width="591" height="211"/>
+        <image name="home_unproductive_button" width="591" height="211"/>
+        <image name="hourglass" width="778" height="465"/>
+        <image name="num_trees_label" width="807" height="144"/>
+        <image name="productivity_stats_button" width="894" height="217"/>
+    </resources>
 </document>
