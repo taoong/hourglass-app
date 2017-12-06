@@ -11,10 +11,10 @@ import Foundation
 class Hourglass {
     
     var productive : Bool
-    var productiveCounter : Float
+    var productiveCounter : Double
 
     var unproductive : Bool
-    var unproductiveCounter : Float
+    var unproductiveCounter : Double
     
     var numTreesGrown = 0
     var activities = [String : Double]()
@@ -25,7 +25,6 @@ class Hourglass {
         self.productiveCounter = 0.0
         self.unproductiveCounter = 0.0
         
-        UserDefaults.standard.set(activities, forKey: "activities")
         UserDefaults.standard.set(numTreesGrown, forKey: "numTreesGrown")
     }
     

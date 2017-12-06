@@ -16,10 +16,16 @@ class ProductiveViewController: UIViewController {
     
     var timer = Timer()
     var isPlaying = false
+    
+    var imageRect = CGRect(x: 112, y: 350, width: 500, height: 300)
+    
+    
+    var animationView: LOTAnimationView = LOTAnimationView(name: "hourglass");
+    
 
+    @IBOutlet weak var currentActivity: UILabel!
     @IBOutlet weak var productiveOrNot: UILabel!
-    var productiveOrNotText = "Productive"
-    @IBOutlet weak var imageView: UIImageView!
+    var productiveOrNotText = "Being productive"
     @IBOutlet weak var timerLabel: UILabel!
     
     @IBOutlet weak var switchButton: UIButton!
@@ -35,17 +41,23 @@ class ProductiveViewController: UIViewController {
                 self.model.numTreesGrown += 1
             }
             
-            if var activities = UserDefaults.standard.value(forKey: "activities") as? Dictionary<String, Float> {
-                activities.updateValue(self.model.productiveCounter, forKey: self.currentTask)
+            if var activities = UserDefaults.standard.value(forKey: "activities") as? Dictionary<String, Double> {
+                let counter = self.model.productiveCounter
+                activities.updateValue(counter, forKey: self.currentTask)
+                self.model.activities = activities
+                UserDefaults.standard.set(self.model.activities, forKey: "activities")
                 print(activities)
             }
-            
+        
         } else if self.model.unproductive {
             self.model.unproductiveCounter += 0.1
             timerLabel.text = String(format: "%.1f", self.model.unproductiveCounter)
             
-            if var activities = UserDefaults.standard.value(forKey: "activities") as? Dictionary<String, Float> {
-                activities.updateValue(self.model.unproductiveCounter, forKey: self.currentTask)
+            if var activities = UserDefaults.standard.value(forKey: "activities") as? Dictionary<String, Double> {
+                let counter = self.model.unproductiveCounter
+                activities.updateValue(counter, forKey: self.currentTask)
+                self.model.activities = activities
+                UserDefaults.standard.set(self.model.activities, forKey: "activities")
                 print(activities)
             }
         }
@@ -60,6 +72,10 @@ class ProductiveViewController: UIViewController {
         
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(UpdateTimer), userInfo: nil, repeats: true)
         isPlaying = true
+        
+        animationView.play{ (finished) in
+            // Do Something
+        }
     }
     
     @IBAction func pauseTimer(_ sender: AnyObject) {
@@ -68,6 +84,7 @@ class ProductiveViewController: UIViewController {
         
         timer.invalidate()
         isPlaying = false
+        
     }
     
     @IBAction func resetTimer(_ sender: AnyObject) {
@@ -87,19 +104,35 @@ class ProductiveViewController: UIViewController {
     
     @IBAction func switchTimer(_ sender: AnyObject) {
         if (self.model.productive) {
+            self.timer.invalidate()
             resetTimer(sender)
             self.model.unproductive = true
             self.model.productive = false
             self.model.productiveCounter = 0.0
-            productiveOrNot.text = "Unproductive"
+            productiveOrNot.text = "Being unproductive"
         }
         else if (self.model.unproductive) {
+            self.timer.invalidate()
             resetTimer(sender)
             self.model.unproductive = false
             self.model.productive = true
             self.model.unproductiveCounter = 0.0
-            productiveOrNot.text = "Productive"
+            productiveOrNot.text = "Being productive"
         }
+        
+        let alert = UIAlertController(title: "Alert", message: "Input Intended Task or Activity", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Enter", style: .default, handler: { [weak alert] (_) in
+            self.currentTask = (alert?.textFields![0].text!)!      // alert.textFields![0].text! is the input text from the textfield in the alert
+            if var activities = UserDefaults.standard.value(forKey: "activities") as? Dictionary<String, Double> {
+                self.model.activities = activities
+            }
+            self.currentActivity.text = self.currentTask
+        }))
+        alert.addTextField(configurationHandler: {(textField: UITextField!) in
+            textField.placeholder = "E.g. Studying for biology midterm"
+            // textField.isSecureTextEntry = true     // for password input
+        })
+        self.present(alert, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
@@ -107,6 +140,11 @@ class ProductiveViewController: UIViewController {
         
         timerLabel.text = String(self.model.productiveCounter)
         pauseButton.isEnabled = false
+        
+        animationView.frame = imageRect
+        animationView.contentMode = .scaleAspectFill
+        animationView.loopAnimation = true
+        self.view.addSubview(animationView)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -121,10 +159,8 @@ class ProductiveViewController: UIViewController {
             self.currentTask = (alert?.textFields![0].text!)!      // alert.textFields![0].text! is the input text from the textfield in the alert
             if var activities = UserDefaults.standard.value(forKey: "activities") as? Dictionary<String, Double> {
                 self.model.activities = activities
-                self.model.activities.updateValue(0.0, forKey: self.currentTask)
-                UserDefaults.standard.set(self.model.activities, forKey: "activities")
             }
-            print(self.model.activities)
+            self.currentActivity.text = self.currentTask
         }))
         alert.addTextField(configurationHandler: {(textField: UITextField!) in
             textField.placeholder = "E.g. Studying for biology midterm"
@@ -139,12 +175,6 @@ class ProductiveViewController: UIViewController {
 //            }
 //        }
         
-        if self.model.productiveCounter > 0.0 || self.model.unproductiveCounter > 0.0 {
-            startButton.isEnabled = false
-            pauseButton.isEnabled = true
-            timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(UpdateTimer), userInfo: nil, repeats: true)
-            isPlaying = true
-        }
     }
     
     override func didReceiveMemoryWarning() {

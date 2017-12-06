@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fkb-Gw-Gja">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fkb-Gw-Gja">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,46 +17,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z3V-4W-PXZ">
-                                <rect key="frame" x="166" y="418" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z3V-4W-PXZ">
+                                <rect key="frame" x="166" y="172" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lWf-HU-fI2">
-                                <rect key="frame" x="106" y="200" width="162" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Start being productive!"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lWf-HU-fI2">
+                                <rect key="frame" x="83" y="357" width="74" height="52"/>
+                                <state key="normal" title="Productive"/>
                                 <connections>
                                     <action selector="toProductiveWithSender:" destination="Fsk-dO-ss5" eventType="touchUpInside" id="f1j-CB-GPj"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wND-OE-MjU">
-                                <rect key="frame" x="106" y="260" width="162" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Track unproductivity"/>
-                                <connections>
-                                    <action selector="toUnproductiveWithSender:" destination="Fsk-dO-ss5" eventType="touchUpInside" id="O1b-u2-ds0"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number of Trees Grown" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ifA-HJ-AKz">
-                                <rect key="frame" x="73" y="378" width="228" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Number of Trees Grown:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ifA-HJ-AKz">
+                                <rect key="frame" x="73" y="143" width="228" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QwP-5p-bJm">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QwP-5p-bJm">
                                 <rect key="frame" x="106" y="494" width="162" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Activity Tracker"/>
+                                <state key="normal" title="Productivity Statistics"/>
                                 <connections>
                                     <action selector="toActivityTracker:" destination="Fsk-dO-ss5" eventType="touchUpInside" id="sWd-Bi-Jc3"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I'm being:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xco-Gw-w04">
+                                <rect key="frame" x="150" y="310" width="75" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wND-OE-MjU">
+                                <rect key="frame" x="208" y="368" width="93" height="30"/>
+                                <state key="normal" title="Unproductive"/>
+                                <connections>
+                                    <action selector="toUnproductiveWithSender:" destination="Fsk-dO-ss5" eventType="touchUpInside" id="O1b-u2-ds0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xco-Gw-w04" firstAttribute="centerX" secondItem="izm-eW-do8" secondAttribute="centerX" id="2UL-ti-D3t"/>
+                            <constraint firstItem="lWf-HU-fI2" firstAttribute="leading" secondItem="izm-eW-do8" secondAttribute="leading" constant="83" id="BXy-gR-g2q"/>
+                            <constraint firstItem="xco-Gw-w04" firstAttribute="top" secondItem="z3V-4W-PXZ" secondAttribute="bottom" constant="117" id="BkT-6X-cfB"/>
+                            <constraint firstItem="z3V-4W-PXZ" firstAttribute="top" secondItem="ifA-HJ-AKz" secondAttribute="bottom" constant="8" id="Dvc-zk-YsK"/>
+                            <constraint firstItem="izm-eW-do8" firstAttribute="trailing" secondItem="wND-OE-MjU" secondAttribute="trailing" constant="74" id="Elk-fL-Pao"/>
+                            <constraint firstItem="QwP-5p-bJm" firstAttribute="centerX" secondItem="izm-eW-do8" secondAttribute="centerX" id="J18-JU-G2f"/>
+                            <constraint firstItem="ifA-HJ-AKz" firstAttribute="top" secondItem="izm-eW-do8" secondAttribute="top" constant="79" id="Ky0-U1-wlH"/>
+                            <constraint firstItem="QwP-5p-bJm" firstAttribute="top" secondItem="wND-OE-MjU" secondAttribute="bottom" constant="96" id="Vco-bJ-dYK"/>
+                            <constraint firstItem="wND-OE-MjU" firstAttribute="top" secondItem="xco-Gw-w04" secondAttribute="bottom" constant="37" id="cDn-SD-qV7"/>
+                            <constraint firstItem="QwP-5p-bJm" firstAttribute="top" secondItem="lWf-HU-fI2" secondAttribute="bottom" constant="85" id="iI4-ae-a5P"/>
+                            <constraint firstItem="lWf-HU-fI2" firstAttribute="top" secondItem="xco-Gw-w04" secondAttribute="bottom" constant="26" id="j6O-JX-ard"/>
+                            <constraint firstItem="z3V-4W-PXZ" firstAttribute="centerX" secondItem="izm-eW-do8" secondAttribute="centerX" id="rge-P7-kPk"/>
+                            <constraint firstItem="ifA-HJ-AKz" firstAttribute="centerX" secondItem="izm-eW-do8" secondAttribute="centerX" id="wdv-pQ-bPh"/>
+                            <constraint firstItem="wND-OE-MjU" firstAttribute="leading" secondItem="lWf-HU-fI2" secondAttribute="trailing" constant="51" id="wrq-Xv-HLX"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="izm-eW-do8"/>
                     </view>
                     <navigationItem key="navigationItem" id="ufi-R0-5oc"/>
@@ -78,12 +95,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vbt-Gg-A04">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="609"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ajW-pG-GZr">
-                                <rect key="frame" x="111" y="275" width="153" height="58"/>
+                                <rect key="frame" x="111" y="175" width="153" height="58"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="52"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -125,9 +138,14 @@
                                     <action selector="switchTimer:" destination="65H-f4-iAH" eventType="touchUpInside" id="pDV-Fg-dEt"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Productive" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Js8-Wi-PuY">
-                                <rect key="frame" x="146" y="246" width="140" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Productive" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Js8-Wi-PuY">
+                                <rect key="frame" x="145" y="118" width="85" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Current Activity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFo-Qd-IBt">
+                                <rect key="frame" x="128" y="147" width="119.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -135,15 +153,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ajW-pG-GZr" firstAttribute="centerY" secondItem="SvW-mp-gk8" secondAttribute="centerY" id="2qg-m6-SOD"/>
-                            <constraint firstItem="ajW-pG-GZr" firstAttribute="centerX" secondItem="SvW-mp-gk8" secondAttribute="centerX" id="8dG-LV-FuK"/>
+                            <constraint firstItem="ajW-pG-GZr" firstAttribute="centerY" secondItem="SvW-mp-gk8" secondAttribute="centerY" constant="-161.5" id="2qg-m6-SOD"/>
+                            <constraint firstItem="ajW-pG-GZr" firstAttribute="centerX" secondItem="SvW-mp-gk8" secondAttribute="centerX" id="5G7-1A-gzj"/>
+                            <constraint firstItem="eFo-Qd-IBt" firstAttribute="top" secondItem="Js8-Wi-PuY" secondAttribute="bottom" constant="8" id="K6G-0W-VUc"/>
+                            <constraint firstItem="ajW-pG-GZr" firstAttribute="top" secondItem="Js8-Wi-PuY" secondAttribute="bottom" constant="36" id="RcE-DO-wXn"/>
+                            <constraint firstItem="eFo-Qd-IBt" firstAttribute="centerX" secondItem="SvW-mp-gk8" secondAttribute="centerX" id="Xtf-Bs-gl0"/>
+                            <constraint firstItem="ajW-pG-GZr" firstAttribute="top" secondItem="eFo-Qd-IBt" secondAttribute="bottom" constant="7.5" id="cXt-30-7Rn"/>
+                            <constraint firstItem="Js8-Wi-PuY" firstAttribute="centerX" secondItem="SvW-mp-gk8" secondAttribute="centerX" id="fhp-0u-F7Y"/>
                             <constraint firstItem="Mg3-Fn-mtZ" firstAttribute="centerX" secondItem="SvW-mp-gk8" secondAttribute="centerX" id="gmw-jZ-j8d"/>
                             <constraint firstItem="Mg3-Fn-mtZ" firstAttribute="top" secondItem="SvW-mp-gk8" secondAttribute="bottom" constant="-50" id="kf0-h8-0W0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SvW-mp-gk8"/>
                     </view>
                     <connections>
-                        <outlet property="imageView" destination="vbt-Gg-A04" id="71f-nj-Iue"/>
+                        <outlet property="currentActivity" destination="eFo-Qd-IBt" id="vdn-IO-fG8"/>
                         <outlet property="pauseButton" destination="k4m-og-xPu" id="Ljk-Ty-9ju"/>
                         <outlet property="productiveOrNot" destination="Js8-Wi-PuY" id="vbS-Tb-fQX"/>
                         <outlet property="startButton" destination="Imz-Af-RP7" id="HJE-vv-Yyy"/>

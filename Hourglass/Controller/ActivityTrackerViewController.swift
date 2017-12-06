@@ -34,8 +34,8 @@ class ActivityTrackerViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         let activities = UserDefaults.standard.value(forKey: "activities") as? Dictionary<String, Double>
-        let names = ["A", "B", "C"] // Array(activities!.keys)
-        let times = [10987.0, 9876.99, 5678.95] // Array(activities!.values)
+        let names = Array(activities!.keys)
+        let times = Array(activities!.values)
         
         self.pieChartView = PieChartView(frame: self.view.bounds)
         pieChartView.tag = 0
